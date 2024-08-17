@@ -14,5 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @NoArgsConstructor
 @Component
 public class StatusHandler {
-    ConcurrentHashMap<String, String> taskStatus = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, String> taskStatus = new ConcurrentHashMap<>();
+
+    private String finalResult;
 }

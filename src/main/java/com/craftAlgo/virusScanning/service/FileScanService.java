@@ -16,5 +16,6 @@ public class FileScanService {
         statusHandler.getTaskStatus().put(TaskId,"In progress");
         Thread.sleep(20000);
         statusHandler.getTaskStatus().put(TaskId,"Completed");
+        statusHandler.setFinalResult("Here is the result..");
     }
 }

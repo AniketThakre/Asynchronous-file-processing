@@ -21,4 +21,9 @@ public class StatusCheckController {
     public ResponseEntity<String> checkStatus(@PathVariable String taskId){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(statusHandler.getTaskStatus().getOrDefault(taskId,"Status not available for the task id.."));
     }
+
+    @GetMapping("/result/{taskId}")
+    public ResponseEntity<String> result(@PathVariable String taskId){
+        return ResponseEntity.accepted().body(statusHandler.getFinalResult());
+    }
 }

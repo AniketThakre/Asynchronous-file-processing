@@ -34,8 +34,9 @@ public class FileHandleController {
         }
         //To generate the unique task id for each file processing
         String TaskId  = UUID.randomUUID().toString();
-        //Setting status as pending for now
+        //Setting status as pending for now and result as pending
         statusHandler.getTaskStatus().put(TaskId,"Your file processing is in pending state. It will start processing once allocated.");
+        statusHandler.setFinalResult("The file is still in progress.. The result will be available once the processing completes..");
         // Started the function execution asyncronously
         fileScanService.scanFile(file,TaskId,statusHandler);
         // As the above execution is asyncronous we can provide the task id to user for status check
